@@ -1,0 +1,21 @@
+Scripts permettant d'effectuer des sauvegardes automatiques des fichiers (Complet + incrémental) et bases de données
+
+* Toutes les bases de données sont automatiquement sauvegardées toutes les 12 heures
+
+* Tous les sites dans /home/sites/domain.tld/subdomain sont sauvegardés avec un backup complet tous les mois et un bacup incrémental toutes les 12 heures (fichiers modifiés depuis le backup complet)
+
+Il  reconnait  les  projets  symfony  pour  chercher la base de donnée utilisée et la sauvegarder dans le même dossier que les fichiers (/home/backups/domain.tld/subdomain/YYYY/MM/)
+
+Les bases de données qu'il n'a pas su lier à un projet sont sauvegardées dans /home/backups/databases/<db-name>
+
+On peut exclure certains dossiers via
+  $engine->excludeFolder('/home/sites/symfony');
+
+On peut exclure certaines bases de données via
+  $engine->excludeDatabase('information_schema');
+
+On peut exclure certaines tables via:
+  $engine->excludeTable('dalta_extranet', 'orders');
+
+  Utile pour les grosses tables qu'on importe depuis d'autres fichiers par exemple.
+

@@ -2,10 +2,6 @@
 
 try {
     $engine = new MyBackupEngine('/home/backups');
-
-	// $engine = new MyBackupEngine('/home/backups/sol-violette.fr/tracking');
-	// $engine->processRootFolder('/home/sites/sol-violette.fr/tracking');
-
 	$engine->excludeFolder('/home/sites/symfony');
 	$engine->excludeFolder('/home/sites/kreactiv.fr/.svn');
 
