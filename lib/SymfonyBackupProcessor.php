@@ -1,5 +1,6 @@
 <?php
 
+require_once(dirname(__FILE__).'/BackupProcessor.php');
 class SymfonyBackupProcessor extends BackupProcessor {
 	function getPathToIgnore($rootPath)
 	{

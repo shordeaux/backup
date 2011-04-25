@@ -1,5 +1,7 @@
 <?php
 
+require_once(dirname(__FILE__).'/BackupEngine.php');
+require_once(dirname(__FILE__).'/SymfonyBackupProcessor.php');
 class MyBackupEngine extends BackupEngine {
 	const RULE_SYMFONY = 'symfony';
 
